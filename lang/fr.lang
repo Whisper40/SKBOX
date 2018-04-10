@@ -1,8 +1,8 @@
 ## Français ##
-100                       Ce script doit être exécuté en root.
-102           Bienvenue dans cette installation automatique de ruTorrent
-104         Le premier utilisateur sera l'administrateur de Seedbox-Manager,
-106      vous pourrez ajouter d'autres utilisateurs à la fin de l'installation.
+100                       ROOT NECESSAIRE
+102           		INSTALLATION DE RUTORRENT
+104   CONFIGURATION DES UTILISATEURS SUPPLEMENTAIRES A LA FIN
+106     				BONNE INSTALLATION
 108
 110 Le nom de votre utilisateur doit être en minuscule,\nde plus de 3 lettres et sans caractères spéciaux.
 112 Entrez le mot de passe pour cet utilisateur, ou appuyez sur "
@@ -16,7 +16,7 @@
 128 Voulez vous installer un serveur FTP (o/n):
 130       Ce script doit être exécuté sur Debian 7/8/9 - 64 bits exclusivement.
 132 Mise à jour du serveur
-134      Fait !
+134      C'est Fait !
 136 Installation des paquets essentiels
 138 Configuration couleurs Nano
 140 Installation XMLRPC
@@ -45,7 +45,7 @@
 186 Mot de passe:
 188 Elles vous permettront de vous connecter sur ruTorrent,\nSeedbox-Manager et en FTP si choisi à l'installation.
 190 Voulez vous ajouter un autre utilisateur (o/n):
-192 Génération du log d'installation.
+192 Génération du log d'installation......
 194 Voulez vous redémarrer pour finaliser votre installation (o/n):
 196 Le log de l'installation est visible à cette adresse:
 198 Erreur cet utilisateur existe déjà
@@ -55,17 +55,17 @@
 204 #
 206 Et dans la partie "Administration" de Seedbox-Manager\npour ajuster certains réglages:
 208 #
-210            Bon download, restez en seed et à bientôt sur mondedie.fr
+210            Source Bonobox/Ratxabox
 212 #
 214 Entrez le nom de l'utilisateur (en minuscule):
 216 #
 218 Ajout de l'utilisateur terminé !
 220      Votre installation n'est pas compatible avec cette version du script.
-222                Vous trouverez de l'aide sur http://mondedie.fr !
-224                   Utilitaire de gestion utilisateur ruTorrent
-226          Attention, si vous avez modifié votre fichier rutorrent.conf
-228          depuis la fin de l'installation automatique, le script peut
-230          ne pas fonctionner normalement. Faites le manuellement !
+222                				Bye
+224                   Bienvenue dans le coté gestion
+226         Merci de prendre un minimum de précautions !
+228         La maintenance peut être executée par n'importe qui
+230         Le LVM est prévu pour un fonctionnement en "vghome" et non "vg0"
 232 Voulez vous continuer? (o/n):
 234 Choisissez une option
 236  1
