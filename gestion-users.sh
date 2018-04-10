@@ -765,7 +765,7 @@ if FONCYES "$VALIDE"; then
 						rm -rf /var/lib/plexmediaserver
 						userdel plex
 					else
-						 break
+						 break;
 
 				elif ['$choix' == '7']; then
 					service plexmediaserver stop
