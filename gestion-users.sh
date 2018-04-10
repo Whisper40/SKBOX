@@ -767,7 +767,7 @@ if FONCYES "$VALIDE"; then
 					else
 						 break
 
-				elif ['$choix' == '7'] then
+				elif ['$choix' == '7']; then
 					service plexmediaserver stop
 					service plexmediaserver start
 
