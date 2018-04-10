@@ -846,13 +846,13 @@ if FONCYES "$VALIDE"; then
 				echo " Cette opération présente des risques ! "
 				echo " Merci de saisir le nom de l'utilisateur "
 				read -r USER
-				if [ -d "/home/$USER" ]; then
+				if [[ -d "/home/$USER" ]]; then
 					service "$USER"-rtorrent stop
 					umount /home/"$USER"/
 					e2fsck -f /dev/mapper/vghome-"$USER"
 					echo " Si le résultat de contagion est inférieur appuyé sur Y/N"
 					read -r answer
-					if ['$answer' == 'Y']; then
+					if [['$answer' == 'Y']]; then
 						echo " Combien de Go en + ? "
 						read -r Nombre
 
@@ -862,11 +862,13 @@ if FONCYES "$VALIDE"; then
 							mount /dev/mapper/vghome-"$USER" /home/"$USER"/
 						else
 							echo "Valeur incorrecte"
+						fi
 					else
-						echo " Merci de prévenir Kévin, ne plus manipuler !"			
+						echo " Merci de prévenir Kévin, ne plus manipuler !"
+					fi			
 				else		
 					echo " Utilisateur Inconnu ! "
-					break
+				fi
 
 
 			*) # fail
