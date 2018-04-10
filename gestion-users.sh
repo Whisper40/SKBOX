@@ -753,7 +753,7 @@ if FONCYES "$VALIDE"; then
 				echo " 4 - Pour désinstaller PLEX totalement "
 				echo " 7 - Pour redémarrer PLEX "
 				echo " 9 - Pour installer une ancienne version(1.12) "
-				read -r choix
+				read choix
 				if choix="1"; then
 					apt-get remove plexmediaserver -y
 
