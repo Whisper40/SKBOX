@@ -764,8 +764,7 @@ if FONCYES "$VALIDE"; then
 						apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
 						userdel plex
-					else
-						 break;
+					
 
 				elif ['$choix' == '7']; then
 					service plexmediaserver stop
