@@ -756,18 +756,18 @@ if FONCYES "$VALIDE"; then
 				read choix
 				if [[ "$choix" == "1"]] 
 					then
-						apt-get remove plexmediaserver -y
+					apt-get remove plexmediaserver -y
 
 				elif [[ "$choix" == 4]] 
 					then
-						echo " Etes vous sur ? Y/N "
-						read answer
-						if answer=Y; then
-							apt-get purge plexmediaserver -y
-							rm -rf /var/lib/plexmediaserver
-							userdel plex
-						else
-							 break;
+					echo " Etes vous sur ? Y/N "
+					read answer
+					if answer=Y; then
+						apt-get purge plexmediaserver -y
+						rm -rf /var/lib/plexmediaserver
+						userdel plex
+					else
+						 break;
 
 				elif choix="7"; then
 					service plexmediaserver stop
