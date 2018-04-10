@@ -870,7 +870,7 @@ if FONCYES "$VALIDE"; then
 					echo " Utilisateur Inconnu ! "
 				fi
 
-
+			;;	
 			*) # fail
 				set "292"; FONCTXT "$1"; echo -e "${CRED}$TXT1${CEND}"
 			;;
