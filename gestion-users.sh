@@ -768,11 +768,11 @@ if FONCYES "$VALIDE"; then
 					else
 						 break;
 
-				elif ['choix' == '7']; then
+				elif ['$choix' == '7']; then
 					service plexmediaserver stop
 					service plexmediaserver start
 
-				elif choix="9"; then
+				elif ['$choix' == '9']; then
 					apt-get remove plexmediaserver -y
 					wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 					dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
@@ -810,13 +810,13 @@ if FONCYES "$VALIDE"; then
 			203)
 				echo " Rutorrent indiqué un problème avec Apache ? Y/N "
 				read -r answer
-				if answer=Y; then
+				if ['$answer' == 'Y']; then
 					service apache2 stop
 					service nginx restart
 					echo " Merci de vérifier si le problème est toujours présent "
 					echo " Le problème est-il résolu ? Y/N "
 					read -r resultat
-					if resultat=Y; then
+					if ['$resultat' == 'Y']; then
 						service apache2 stop
 						systemctl disable apache2
 						service nginx restart
@@ -852,7 +852,7 @@ if FONCYES "$VALIDE"; then
 					e2fsck -f /dev/mapper/vghome-"$USER"
 					echo " Si le résultat de contagion est inférieur appuyé sur Y/N"
 					read -r answer
-					if answer=Y; then
+					if ['$answer' == 'Y']; then
 						echo " Combien de Go en + ? "
 						read -r Nombre
 
