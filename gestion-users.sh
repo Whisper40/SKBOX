@@ -832,12 +832,12 @@ if FONCYES "$VALIDE"; then
 				echo " Ce script va s'occuper d'attribuer les bons droits sur l'utilisateur indiqué : "
 				echo " Quel est l'utilisateur concerné ? "
 				read -r USER
-				if [ -d "/home/$USER" ]; then
+				if [[ -d "/home/$USER" ]]; then
 					chmod -R 755 /home/"$USER"/torrents
 					chown -R "$USER":"$USER" /home/"$USER"/torrents/
 				else
 					echo " Utilisateur inconnu"
-					break	
+				fi	
 
 				
 			;;
