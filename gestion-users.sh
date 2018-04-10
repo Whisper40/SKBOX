@@ -789,7 +789,7 @@ if FONCYES "$VALIDE"; then
 			201)
 				echo " Merci de saisir le nom d'utilisateur "
 				read -r pseudo
-				if [ -d "/home/$pseudo" ]; then
+				if [[ -d "/home/$pseudo" ]]; then
 					service "$pseudo"-rtorrent stop
 					service "$pseudo"-rtorrent start
 				else
