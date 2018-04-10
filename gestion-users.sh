@@ -757,7 +757,7 @@ if FONCYES "$VALIDE"; then
 				if ['$choix' == '1']; then
 					apt-get remove plexmediaserver -y
 
-				elif ['$choix' == '4']; then
+				if ['$choix' == '4']; then
 					echo " Etes vous sur ? Y/N "
 					read -r answer
 					if ['$answer' == 'Y']; then
@@ -766,22 +766,18 @@ if FONCYES "$VALIDE"; then
 						userdel plex
 					
 
-				elif ['$choix' == '7']; then
+				if ['$choix' == '7']; then
 					service plexmediaserver stop
 					service plexmediaserver start
 
-				elif ['$choix' == '9']; then
+				if ['$choix' == '9']; then
 					apt-get remove plexmediaserver -y
 					wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 					dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 					systemctl enable plexmediaserver.service
 					systemctl start plexmediaserver.service
-				else; then
-					break	
-			
-					
-
-				
+				fi
+				break
 			;;
 
 
