@@ -821,7 +821,8 @@ if FONCYES "$VALIDE"; then
 						service nginx restart
 						echo " L'arrêt définitif de Apache2 à été executée mais sa suppression n'a pas eut lieux."
 					else
-						echo " Merci de prévenir Kévin ! "	
+						echo " Merci de prévenir Kévin ! "
+					fi		
 				fi
 
 				
