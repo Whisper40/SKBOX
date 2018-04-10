@@ -806,13 +806,13 @@ if FONCYES "$VALIDE"; then
 			203)
 				echo " Rutorrent indiqué un problème avec Apache ? Y/N "
 				read -r answer
-				if [[$answer == Y]]; then
+				if [[$answer == "Y"]]; then
 					/etc/init.d/apache2 stop
 					service nginx restart
 					echo " Merci de vérifier si le problème est toujours présent "
 					echo " Le problème est-il résolu ? Y/N "
 					read -r resultat
-					if [[$resultat == Y]]; then
+					if [[$resultat == "Y"]]; then
 						/etc/init.d/apache2 stop
 						systemctl disable apache2
 						service nginx restart
