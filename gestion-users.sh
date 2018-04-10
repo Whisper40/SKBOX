@@ -760,12 +760,12 @@ if FONCYES "$VALIDE"; then
 				elif ['$choix' == '4']; then
 					echo " Etes vous sur ? Y/N "
 					read -r answer
-					if ['$answer' == 'Y'] then
+					if ['$answer' == 'Y']; then
 						apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
 						userdel plex
 					else
-						 break;
+						 break
 
 				elif ['$choix' == '7'] then
 					service plexmediaserver stop
