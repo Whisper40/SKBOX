@@ -429,7 +429,11 @@ if FONCYES "$VALIDE"; then
 					fi
 
 					# suppression utilisateur
-					deluser "$USER" --remove-home
+					echo " Voulez-vous aussi supprimer son espace de stockage ? Y/N "
+					read -r stockage
+					if [[$stockage == Y]]; then
+						deluser "$USER" --remove-home
+					fi
 
 					echo ""; set "264" "288"; FONCTXT "$1" "$2"; echo -e "${CBLUE}$TXT1${CEND} ${CYELLOW}$USER${CEND} ${CBLUE}$TXT2${CEND}"
 				fi
