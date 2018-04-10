@@ -753,11 +753,11 @@ if FONCYES "$VALIDE"; then
 				echo " 4 - Pour désinstaller PLEX totalement "
 				echo " 7 - Pour redémarrer PLEX "
 				echo " 9 - Pour installer une ancienne version(1.12) "
-				read choix
-				if choix=1; then
+				read -r choix
+				if choix="1"; then
 					apt-get remove plexmediaserver -y
 
-				elif choix=4; then
+				elif choix="4"; then
 					echo " Etes vous sur ? Y/N "
 					read answer
 					if answer=Y; then
@@ -767,11 +767,11 @@ if FONCYES "$VALIDE"; then
 					else
 						 break
 
-				elif choix=7; then
+				elif choix="7"; then
 					service plexmediaserver stop
 					service plexmediaserver start
 
-				elif choix=9; then
+				elif choix="9"; then
 					apt-get remove plexmediaserver -y
 					wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 					dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
@@ -787,13 +787,13 @@ if FONCYES "$VALIDE"; then
 
 			201)
 				echo " Merci de saisir le nom d'utilisateur "
-				read pseudo
+				read -r pseudo
 				if [ -d "/home/$pseudo" ]; then
 					service "$pseudo"-rtorrent stop
 					service "$pseudo"-rtorrent start
 				else
 					echo "L'utilisateur n'existe pas !"
-					break
+					break;
 			;;
 
 			202)
@@ -806,7 +806,7 @@ if FONCYES "$VALIDE"; then
 
 			203)
 				echo " Rutorrent indiqué un problème avec Apache ? Y/N "
-				read -r -r -r answer
+				read -r answer
 				if answer=Y; then
 					service apache2 stop
 					service nginx restart
