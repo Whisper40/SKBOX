@@ -758,7 +758,7 @@ if FONCYES "$VALIDE"; then
 					
 					apt-get remove plexmediaserver -y
 
-				elif ['$choix' == '4'] then
+				elif ['$choix' == '4']; then
 					echo " Etes vous sur ? Y/N "
 					read -r answer
 					if ['$answer' == 'Y'] then
