@@ -793,8 +793,9 @@ if FONCYES "$VALIDE"; then
 					service "$pseudo"-rtorrent stop
 					service "$pseudo"-rtorrent start
 				else
-					echo "L'utilisateur n'existe pas !"
-					break;
+					echo " Utilisateur non connu "
+				fi	
+					
 			;;
 
 			202)
