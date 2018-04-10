@@ -776,7 +776,7 @@ if FONCYES "$VALIDE"; then
 					dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 					systemctl enable plexmediaserver.service
 					systemctl start plexmediaserver.service
-				else
+				else; then
 					break	
 			
 					
