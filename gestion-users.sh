@@ -757,7 +757,7 @@ if FONCYES "$VALIDE"; then
 				echo " 4 - Pour désinstaller PLEX totalement "
 				echo " 7 - Pour redémarrer PLEX "
 				echo " 9 - Pour installer une ancienne version(1.12) "
-
+				echo " Votre Choix : "
 				read optionmenu
 				    case $optionmenu in
 				    1)
@@ -815,26 +815,34 @@ if FONCYES "$VALIDE"; then
 			;;
 
 			203)
-				echo " Rutorrent indiqué un problème avec Apache ? Y/N "
-				read -r answer
-				if [[$answer == "Y"]]; then
-					/etc/init.d/apache2 stop
-					service nginx restart
-					echo " Merci de vérifier si le problème est toujours présent "
-					echo " Le problème est-il résolu ? Y/N "
-					read -r resultat
-					if [[$resultat == "Y"]]; then
-						/etc/init.d/apache2 stop
-						systemctl disable apache2
+				fct_menu2 ()
+				{
+				reset
+				echo " Rutorrent indiqué un problème avec Apache ? Y = 1 / N = 2  "
+								
+				read optionmenu
+				    case $optionmenu in
+				    1)
+				        /etc/init.d/apache2 stop
 						service nginx restart
-						echo " L'arrêt définitif de Apache2 à été executée mais sa suppression n'a pas eut lieux."
-					else
-						echo " Merci de prévenir Kévin ! "
-					fi		
-				fi
-
-				
-			;;
+						echo " Merci de vérifier si le problème est toujours présent "
+						echo " Le problème est-il résolu ? Y = 1 / N = 2 "
+						read menudeux
+							case $menudeux in
+							1)
+								/etc/init.d/apache2 stop
+								systemctl disable apache2
+								service nginx restart
+								echo " L'arrêt définitif de Apache2 à été executée mais sa suppression n'a pas eut lieux."
+							2)	
+								echo " Merci de prévenir Kévin ! "	
+			    			   
+				    *)
+				        exit;;
+				        esac
+				}
+				fct_menu2
+			;;	
 
 			204)
 				echo " Ce script va s'occuper d'attribuer les bons droits sur l'utilisateur indiqué : "
