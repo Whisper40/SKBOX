@@ -752,6 +752,7 @@ if FONCYES "$VALIDE"; then
 			200)
 				fct_menu ()
 				{
+				reset
 				echo " 1 - Pour désinstaller PLEX seulement "
 				echo " 4 - Pour désinstaller PLEX totalement "
 				echo " 7 - Pour redémarrer PLEX "
@@ -761,29 +762,26 @@ if FONCYES "$VALIDE"; then
 				    case $optionmenu in
 				    1)
 				        apt-get remove plexmediaserver -y
-				        fct_menu;;
+				        echo " C'est FAIT ! "
 				    4)
 				        apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
 						userdel plex 
-						fct_menu;;
+						echo " C'est FAIT ! "
 				    7)
 				        service plexmediaserver stop
 						service plexmediaserver start
-						fct_menu;;
+						echo " C'est FAIT ! "
 				    9)
 				        apt-get remove plexmediaserver -y
 						wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 						dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 						systemctl enable plexmediaserver.service
 						systemctl start plexmediaserver.service
-						fct_menu;;
+						echo " C'est FAIT ! "
 				   
 				    *)
-				        echo
-				        echo "What ?"
-				        echo
-				        fct_menu;;
+				        exit;;
 				        esac
 				}
 				fct_menu
