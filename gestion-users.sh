@@ -760,21 +760,24 @@ if FONCYES "$VALIDE"; then
 				read optionmenu
 				    case $optionmenu in
 				    1)
-				        apt-get remove plexmediaserver -y;
+				        apt-get remove plexmediaserver -y
 				        fct_menu;;
 				    4)
 				        apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
-						userdel plex; fct_menu;;
+						userdel plex 
+						fct_menu;;
 				    7)
 				        service plexmediaserver stop
-						service plexmediaserver start; fct_menu;;
+						service plexmediaserver start
+						fct_menu;;
 				    9)
 				        apt-get remove plexmediaserver -y
 						wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 						dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
 						systemctl enable plexmediaserver.service
-						systemctl start plexmediaserver.service; fct_menu;;
+						systemctl start plexmediaserver.service
+						fct_menu;;
 				   
 				    *)
 				        echo
