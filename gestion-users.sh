@@ -836,7 +836,9 @@ if FONCYES "$VALIDE"; then
 								echo " L'arrêt définitif de Apache2 à été executée mais sa suppression n'a pas eut lieux."
 							2)	
 								echo " Merci de prévenir Kévin ! "	
-			    			   
+			    			*)
+						        exit;;
+						        esac   
 				    *)
 				        exit;;
 				        esac
