@@ -826,17 +826,9 @@ if FONCYES "$VALIDE"; then
 				        /etc/init.d/apache2 stop
 				        systemctl disable apache2
 						service nginx restart
-						echo " Merci de vérifier si le problème est toujours présent "
-						echo " Le problème est-il résolu ? Y = 1 / N = 2 "
-						read menudeux
-							case $menudeux in
-							1)
-								echo " L'arrêt définitif de Apache2 à été executée mais sa suppression n'a pas eut lieux."
-							2)	
-								echo " Merci de prévenir Kévin ! "	
-			    			*)
-						        exit;;
-						    	esac   
+						echo " Normalement le problème est résolu "
+						
+						  
 				    *)
 						echo " Merci de prévenir Kévin ! "
 				        exit;;
