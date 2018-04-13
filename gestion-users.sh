@@ -763,15 +763,18 @@ if FONCYES "$VALIDE"; then
 				    1)
 				        apt-get remove plexmediaserver -y
 				        echo " C'est FAIT ! "
+				        ;;
 				    4)
 				        apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
 						userdel plex 
 						echo " C'est FAIT ! "
+						;;
 				    7)
 				        service plexmediaserver stop
 						service plexmediaserver start
 						echo " C'est FAIT ! "
+						;;
 				    9)
 				        apt-get remove plexmediaserver -y
 						wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
@@ -779,6 +782,7 @@ if FONCYES "$VALIDE"; then
 						systemctl enable plexmediaserver.service
 						systemctl start plexmediaserver.service
 						echo " C'est FAIT ! "
+						;;
 				   
 				    *)
 				        exit;;
