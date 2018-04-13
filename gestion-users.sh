@@ -750,39 +750,41 @@ if FONCYES "$VALIDE"; then
 			;;
 
 			200)
+				fct_menu ()
+				{
 				echo " 1 - Pour désinstaller PLEX seulement "
 				echo " 4 - Pour désinstaller PLEX totalement "
 				echo " 7 - Pour redémarrer PLEX "
 				echo " 9 - Pour installer une ancienne version(1.12) "
-				read -r choix
-				if '$choix' == 1; then
-					apt-get remove plexmediaserver -y
 
-				elif [[$choix == 4]]; then
-					echo " Etes vous sur ? Y/N "
-					read -r answer
-					if [[$answer == Y]]; then
-						apt-get purge plexmediaserver -y
+				read optionmenu
+				    case $optionmenu in
+				    1)
+				        apt-get remove plexmediaserver -y;
+				        fct_menu;;
+				    4)
+				        apt-get purge plexmediaserver -y
 						rm -rf /var/lib/plexmediaserver
-						userdel plex
-					fi
-
-				elif [[$choix == 7]]; then
-					service plexmediaserver stop
-					service plexmediaserver start
-
-				elif [[$choix == 9]]; then
-					apt-get remove plexmediaserver -y
-					wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
-					dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
-					systemctl enable plexmediaserver.service
-					systemctl start plexmediaserver.service
-				fi
-			;;	
-			
-					
-
-				
+						userdel plex; fct_menu;;
+				    7)
+				        service plexmediaserver stop
+						service plexmediaserver start; fct_menu;;
+				    9)
+				        apt-get remove plexmediaserver -y
+						wget https://downloads.plex.tv/plex-media-server/1.12.0.4829-6de959918/plexmediaserver_1.12.0.4829-6de959918_amd64.deb
+						dpkg -i plexmediaserver_1.12.0.4829-6de959918_amd64.deb
+						systemctl enable plexmediaserver.service
+						systemctl start plexmediaserver.service; fct_menu;;
+				   
+				    *)
+				        echo
+				        echo "What ?"
+				        echo
+				        fct_menu;;
+				        esac
+				}
+				fct_menu
+			;;					
 			
 
 
