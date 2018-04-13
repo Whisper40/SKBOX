@@ -755,7 +755,7 @@ if FONCYES "$VALIDE"; then
 				echo " 7 - Pour redémarrer PLEX "
 				echo " 9 - Pour installer une ancienne version(1.12) "
 				read -r choix
-				if [[$choix == 1]]; then
+				if [['$choix' == 1]]; then
 					apt-get remove plexmediaserver -y
 
 				elif [[$choix == 4]]; then

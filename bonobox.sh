@@ -367,7 +367,7 @@ if [ ! -f "$NGINXENABLE"/rutorrent.conf ]; then
 	# installation des plugins
 	cd "$RUPLUGINS" || exit
 
-	for PLUGINS in 'logoff' 'chat' 'lbll-suite' 'linklogs' 'nfo' 'titlebar' 'filemanager' 'fileshare' 'ratiocolor' 'pausewebui'; do
+	for PLUGINS in 'logoff' 'chat' 'mobile' 'lbll-suite' 'linklogs' 'nfo' 'titlebar' 'filemanager' 'fileshare' 'ratiocolor' 'pausewebui'; do
 		cp -R "$BONOBOX"/plugins/"$PLUGINS" "$RUPLUGINS"/
 	done
 
