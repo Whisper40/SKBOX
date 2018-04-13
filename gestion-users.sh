@@ -820,13 +820,14 @@ if FONCYES "$VALIDE"; then
 				reset
 				echo " Rutorrent indiqué un problème avec Apache ? Y = 1 / N = 2  "
 								
-				read optionmenu
-				    case $optionmenu in
+				read optionmenu2
+				    case $optionmenu2 in
 				    1)
 				        /etc/init.d/apache2 stop
 				        systemctl disable apache2
 						service nginx restart
 						echo " Normalement le problème est résolu "
+						;;
 						
 						  
 				    *)
